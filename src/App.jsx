@@ -12,15 +12,24 @@ import Footer from "./component/Footer.jsx";
 const App = () => {
   return (
     <Router>
-      <Navbar />
+      <div className="flex flex-col min-h-screen">
+        {/* Navbar stays at the top */}
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
-      </Routes>
-      <Footer />
+        {/* Main content area */}
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            {/* Other Routes */}
+          </Routes>
+        </main>
+
+        {/* Footer stays at the bottom */}
+        <Footer />
+      </div>
     </Router>
   );
 };

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa'; // Import Icons
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // State to toggle the menu
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen(!isOpen); // Toggle the mobile menu
+
+  const closeMenu = () => setIsOpen(false); // Close the menu when a link is clicked
 
   return (
     <nav className="bg-gradient-to-r from-blue-900 to-indigo-800 py-4 shadow-lg relative z-50">
@@ -29,28 +31,28 @@ const Navbar = () => {
 
         {/* Menu Links */}
         <div
-          className={`absolute top-14 left-0 right-0 mx-4 bg-blue-800 rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out ${
-            isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'
-          } md:static md:transform-none md:opacity-100 md:scale-100 md:bg-transparent md:flex md:space-x-6`}
+          className={`${
+            isOpen ? 'block' : 'hidden'
+          } absolute top-14 left-0 right-0 mx-4 bg-blue-800 rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out md:static md:flex md:w-auto md:space-x-6 md:bg-transparent md:opacity-100 md:scale-100`}
         >
           <Link
-            to="dashboard"
+            to="/dashboard"
             className="block px-4 py-2 text-white hover:text-blue-400 transition duration-300"
-            onClick={() => setIsOpen(false)}
+            onClick={closeMenu} // Close the menu when a link is clicked
           >
             Dashboard
           </Link>
           <Link
             to="/signup"
             className="block px-4 py-2 text-white hover:text-blue-400 transition duration-300"
-            onClick={() => setIsOpen(false)}
+            onClick={closeMenu}
           >
             Sign Up
           </Link>
           <Link
             to="/login"
             className="block px-4 py-2 text-white hover:text-blue-400 transition duration-300"
-            onClick={() => setIsOpen(false)}
+            onClick={closeMenu}
           >
             Login
           </Link>

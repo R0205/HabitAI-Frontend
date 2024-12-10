@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 import {
   FaGithub,
   FaTwitter,
   FaFacebook,
   FaLinkedin,
   FaInstagram,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-10">
+    <footer className="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-6">
       <div className="container mx-auto px-6">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-6 space-y-6 md:space-y-0">
