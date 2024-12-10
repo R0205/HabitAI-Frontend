@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";  // Import Link from react-router-dom
 
 const SignupPage = () => {
   return (
@@ -42,7 +43,7 @@ const SignupPage = () => {
         </form>
         <p className="mt-4 text-center">
           Already have an account?{' '}
-          <a href="/login" className="text-blue-500 hover:text-blue-700">Login</a>
+          <Link to="/login" className="text-blue-500 hover:text-blue-700">Login</Link> {/* Use Link component here */}
         </p>
       </div>
     </div>
